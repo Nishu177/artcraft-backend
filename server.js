@@ -10,7 +10,7 @@ app.use(express.json());
 
 // MongoDB connect
 mongoose.connect("mongodb+srv://pooja:<db_poojaanami77>@cluster0.cjaaq62.mongodb.net/artcraft?appName=Cluster0")
-.then(() => console.log("MongoDB Connected ✅"))
+.then(() => console.log("MongoDB Atlas Connected ✅"))
 .catch(err => console.log(err));
 
 // Order Schema
