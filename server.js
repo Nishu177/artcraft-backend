@@ -25,18 +25,19 @@ const Order = mongoose.model("Order", {
 
 // SAVE ORDER
 app.post("/order", async (req, res) => {
-  console.log("Order Received:", req.body);
+  try {
+    console.log("Order Received:", req.body);
 
-  const newOrder = new Order(req.body);
-  await newOrder.save();
+    const newOrder = new Order(req.body);
+    await newOrder.save();
 
-  res.send("Order Saved Successfully 💖");
-});
+    console.log("Saved in DB ✅");
 
-// GET ALL ORDERS (ADMIN PAGE)
-app.get("/orders", async (req, res) => {
-  const orders = await Order.find();
-  res.send(orders);
+    res.send("Order Saved Successfully 💖");
+  } catch (err) {
+    console.log("Error saving:", err);
+    res.status(500).send("Error saving order ❌");
+  }
 });
 
 // ==========================================
