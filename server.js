@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connect
-mongoose.connect("mongodb://127.0.0.1:27017/artcraft")
+mongoose.connect("mongodb+srv://pooja:<db_poojaanami77>@cluster0.cjaaq62.mongodb.net/?appName=Cluster0")
 .then(() => console.log("MongoDB Connected ✅"))
 .catch(err => console.log(err));
 
